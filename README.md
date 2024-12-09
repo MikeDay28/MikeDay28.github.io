@@ -16,3 +16,8 @@ Header 1 subtext
 ### Header 3
 
 header 3 subtext
+
+
+Test image below:
+
+![check](100.jpg)
