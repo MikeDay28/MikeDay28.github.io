@@ -1,4 +1,3 @@
-
 <html>
   <head>
     <meta charset="utf-8">
@@ -9,18 +8,50 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      header img {
+        width: 150px;
+        height: auto;
+        border-radius: 50%;
+      }
+      .collapsible {
+        background-color: #f1f1f1;
+        color: #333;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 16px;
+        transition: background-color 0.2s ease-in-out;
+      }
+      .collapsible:hover {
+        background-color: #ddd;
+      }
+      .collapsible:after {
+        content: '\002B'; /* Plus symbol */
+        font-size: 12px;
+        float: right;
+        margin-left: 5px;
+      }
+      .collapsible.active:after {
+        content: '\2212'; /* Minus symbol */
+      }
+      .content {
+        display: none;
+        overflow: hidden;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #fafafa;
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
-      <header id="header">
-      <img src="PortraitCropped.png">
+    <header id="header">
+      <img src="PortraitCropped.png" alt="Michael Day">
       <h1>Michael Day</h1>
-        <style>
-          header img {
-          width: 150px;
-          height: auto;
-          border-radius: 50%;
-          }
-        </style>
       <ul class="main-menu">
         <li><a href="index.html#home">home</a></li>
         <li><a href="index.html#about">about</a></li>
@@ -34,7 +65,24 @@
         <div id="content">
           <h2>Projects</h2>
           <p>Welcome to my Projects page! Here, you can find details about my work and contributions.</p>
-          <!-- Add your projects content here -->
+
+          <!-- Work Experience Section -->
+          <button class="collapsible">Work Experience</button>
+          <div class="content">
+            <p>Details about my professional work experience, including companies, roles, and achievements.</p>
+          </div>
+
+          <!-- Engineering Student Design Team Section -->
+          <button class="collapsible">Engineering Student Design Team</button>
+          <div class="content">
+            <p>Information about my participation in engineering student design teams, projects, and contributions.</p>
+          </div>
+
+          <!-- Personal Projects Section -->
+          <button class="collapsible">Personal Projects</button>
+          <div class="content">
+            <p>Details about my personal projects, including descriptions, technologies used, and outcomes.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -42,5 +90,21 @@
     <footer>
       Footer, link to contact or resume or something?
     </footer>
+
+    <script>
+      // JavaScript to handle collapsible behavior
+      const collapsibles = document.querySelectorAll(".collapsible");
+      collapsibles.forEach(button => {
+        button.addEventListener("click", () => {
+          button.classList.toggle("active");
+          const content = button.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
