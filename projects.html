@@ -124,7 +124,39 @@
                 I took on the flow distribution and sample processing task as one of my first projects on the team. It involves the design and testing of the P&ID system to treat and filter the site samples. The latest
                 version of the system P&ID is below:
               </p>
-              <img src="R.FLOW_NETWORK.P&ID.V4.PNG" alt="P&ID System Diagram" style="max-width: 100%; height: auto; margin-top: 15px;">
+              <img src="R.FLOW_NETWORK.P&ID.V4.png" alt="P&ID System Diagram" id="pid-image" style="max-width: 100%; height: auto; margin-top: 15px; cursor: pointer;">
+
+              <!-- Overlay for Enlarged Image -->
+              <div id="image-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+                <img id="overlay-image" src="" alt="Enlarged P&ID System Diagram" style="max-width: 90%; max-height: 90%; margin: auto;">
+                <button id="close-overlay" style="position: absolute; top: 20px; right: 20px; background: none; color: white; border: none; font-size: 30px; cursor: pointer;">&times;</button>
+              </div>
+              
+              <!-- JavaScript for Image Overlay -->
+              <script>
+                const pidImage = document.getElementById('pid-image');
+                const overlay = document.getElementById('image-overlay');
+                const overlayImage = document.getElementById('overlay-image');
+                const closeOverlay = document.getElementById('close-overlay');
+              
+                // Open overlay when the image is clicked
+                pidImage.addEventListener('click', () => {
+                  overlayImage.src = pidImage.src; // Use the same image source
+                  overlay.style.display = 'flex'; // Show the overlay
+                });
+              
+                // Close overlay when the close button is clicked
+                closeOverlay.addEventListener('click', () => {
+                  overlay.style.display = 'none'; // Hide the overlay
+                });
+              
+                // Close overlay when clicking outside the image
+                overlay.addEventListener('click', (event) => {
+                  if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                  }
+                });
+              </script>
               
             </div>
             <!-- UBC Rocket -->
