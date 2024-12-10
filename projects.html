@@ -160,14 +160,29 @@
               <p style="text-align: center; color: grey; font-style: italic; margin-top: 10px;">Click to enlarge</p>
 
               <p style="color:black">
-                The P&ID also features electrical components so as to show the full integrated system to be more intuitive for other subteams we collaborate with.
+                The P&ID also features electrical components so as to show the full integrated system to be more intuitive for other subteams we collaborate with. The whole system is referred to as the "science module"
+                which is a standalone box containing the whole system that can be connected and disconnected from the back of the rover.
                 <br>1. The system begins with an input of the raw silt sample into the 'agitator chamber' where it gets mixed with the clean 'rinsing solution'.
                 <br>2. In the agitator chamber, the silt particles are dissolved into solution where the agitator blade mixes the solution and is intended to break apart proteins through high shear forces.
                 <br>3. The solution then feeds through various valves before reaching the first optical flow sensor. This is a feedback device to allow us to check for any blockages in the system in case of
                     sediment build up during operation.
                 <br>4. The peristaltic pump drives the solution through the flow network at a modest rate of about 60ml/min, chosen to minimize the possibility of cross contamination. We have also integrated
                     an H-bridge to allow us to swap the polarity of the pump motor, meaning we can run the pump in reverse. This serves two purposes, to unblock any part of the system and to run a clean rinsing
-                    solution through the system when we want to change sites. This further ensures we avoid any cross-contamination between sites. 
+                    solution through the system when we want to change sites. This further ensures we avoid any cross-contamination between sites.
+                <br>5. The system then reaches the filter subassembly which will be secured inside the rover chassis, with manual valves to allow easy connection/disconnection. Here, the flow can split into one of
+                    the two filter streams depending on which site the sample is from, controlled by a three way solenoid valve. This is another caution for cross-contamination as cleaning the filters during operation is impractical
+                <br>6. The solution then flows through another optical flow sensor to monitor for blockages, then into the carousel chamber where sample analysis takes place. The solution drops into a cuvette held
+                    in by the carousel, which then spins around to be shown to the spectrophotometer to analyse for life. The carousel chamber must be as dark as possible to avoid light interference with the spectrophotometer.
+                <br>
+                <span style="display: block; margin-left: 20px;">
+                  - Light Source 1 shines a beam of light through the cuvette sample. The specific particles in the sample distort the light in a unique way. This gets detected by the spectrophotometer
+                  and Raspberry PI camera which tells us if signs of life are present in the soil.
+                </span>
+                <span style="display: block; margin-left: 20px;">
+                  - Light source 2 shines into the carousel chamber, and along with the USB camera we can determine the fluid level of each cuvette. The carousel then rotates to a new cuvette or waste solution
+                  index to perform the next actions.
+                </span>
+                <br>7. After analysis at the first site is complete, the system undergoes a flushing operation to rinse the fittings and tubing to avoid cross-contamination. The flush leads into the waste solution container.
               </p>
 
               
