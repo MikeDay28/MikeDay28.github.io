@@ -49,16 +49,16 @@
         margin-bottom: 10px;
       }
       .hover-effect {
-        font-size: 16px;
+        font-size: 16px; /* Default size */
         text-decoration: none;
         color: #333;
-        transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        transition: font-size 0.2s ease-in-out, color 0.2s ease-in-out, text-decoration 0.2s ease-in-out; /* Smooth transition */
       }
+
       .hover-effect:hover {
         font-size: 18px; /* Grow on hover */
         color: #EF6D3D; /* Change color on hover */
-        text-decoration: underline;
-        transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        text-decoration: underline; /* Add underline on hover */
       }
     </style>
   </head>
