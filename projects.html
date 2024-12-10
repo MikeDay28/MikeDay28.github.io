@@ -24,8 +24,9 @@
         border: none;
         text-align: left;
         outline: none;
-        font-size: 16px;
+        font-size: 20px;
         transition: background-color 0.2s ease-in-out;
+        text-decoration: bold;
       }
       .collapsible:hover {
         background-color: #ddd;
@@ -48,14 +49,15 @@
         margin-bottom: 10px;
       }
       .hover-effect {
-        font-size: 18px;
+        font-size: 16px;
         text-decoration: none;
         color: #333;
         transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
       }
       .hover-effect:hover {
-        transform: scale(1.2); /* Grow on hover */
+        font-size: 18px; /* Grow on hover */
         color: #EF6D3D; /* Change color on hover */
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -78,7 +80,7 @@
           <p>Welcome to my portfolio page! Here you can find details about my work and engineering projects.</p>
 
           <!-- Work Experience Section -->
-          <button class="collapsible" style="font-size: 24;">Work Experience</button>
+          <button class="collapsible">Work Experience</button>
           <div class="content">
             <button class="collapsible"><b>Dometic Marine</b> | Summer 2024</button>
             <div class="content">
