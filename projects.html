@@ -124,39 +124,9 @@
                 I took on the flow distribution and sample processing task as one of my first projects on the team. It involves the design and testing of the P&ID system to treat and filter the site samples. The latest
                 version of the system P&ID is below:
               </p>
-              <img src="R.FLOW_NETWORK.P&ID.V4.PNG" alt="P&ID System Diagram" id="pid-image" style="max-width: 100%; height: auto; margin-top: 15px; cursor: pointer;">
+              
+              <img src="R.FLOW_NETWORK.P&ID.V4.PNG" alt="P&ID System Diagram" class="enlargeable" style="max-width: 100%; height: auto; margin-top: 15px; cursor: pointer;">
 
-              <!-- Overlay for Enlarged Image -->
-              <div id="image-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
-                <img id="overlay-image" src="" alt="Enlarged P&ID System Diagram" style="max-width: 90%; max-height: 90%; margin: auto;">
-                <button id="close-overlay" style="position: absolute; top: 20px; right: 20px; background: none; color: white; border: none; font-size: 30px; cursor: pointer;">&times;</button>
-              </div>
-              
-              <!-- JavaScript for Image Overlay -->
-              <script>
-                const pidImage = document.getElementById('pid-image');
-                const overlay = document.getElementById('image-overlay');
-                const overlayImage = document.getElementById('overlay-image');
-                const closeOverlay = document.getElementById('close-overlay');
-              
-                // Open overlay when the image is clicked
-                pidImage.addEventListener('click', () => {
-                  overlayImage.src = pidImage.src; // Use the same image source
-                  overlay.style.display = 'flex'; // Show the overlay
-                });
-              
-                // Close overlay when the close button is clicked
-                closeOverlay.addEventListener('click', () => {
-                  overlay.style.display = 'none'; // Hide the overlay
-                });
-              
-                // Close overlay when clicking outside the image
-                overlay.addEventListener('click', (event) => {
-                  if (event.target === overlay) {
-                    overlay.style.display = 'none';
-                  }
-                });
-              </script>
               <p style="text-align: center; color: grey; font-style: italic; margin-top: 10px;">Click to enlarge</p>
 
               <p style="color:black">
@@ -192,39 +162,8 @@
                 <br><br>Below is a series of CAD models to gain more context on how this system looks, as well as phases of testing I performed.
               </p>
 
-              <img src="SciModAssy.png" alt="Preliminary system CAD assembly" id="AssyCAD" style="max-width: 100%; height: auto; margin-top: 15px; cursor: pointer;">
-
-              <!-- Overlay for Enlarged Image -->
-              <div id="image-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
-                <img id="overlay-image" src="" alt="Enlarged Preliminary system CAD assembly" style="max-width: 90%; max-height: 90%; margin: auto;">
-                <button id="close-overlay" style="position: absolute; top: 20px; right: 20px; background: none; color: white; border: none; font-size: 30px; cursor: pointer;">&times;</button>
-              </div>
-              
-              <!-- JavaScript for Image Overlay -->
-              <script>
-                const AssyCAD = document.getElementById('AssyCAD');
-                const overlay = document.getElementById('image-overlay');
-                const overlayImage = document.getElementById('overlay-image');
-                const closeOverlay = document.getElementById('close-overlay');
-              
-                // Open overlay when the image is clicked
-                pidImage.addEventListener('click', () => {
-                  overlayImage.src = AssyCAD.src; // Use the same image source
-                  overlay.style.display = 'flex'; // Show the overlay
-                });
-              
-                // Close overlay when the close button is clicked
-                closeOverlay.addEventListener('click', () => {
-                  overlay.style.display = 'none'; // Hide the overlay
-                });
-              
-                // Close overlay when clicking outside the image
-                overlay.addEventListener('click', (event) => {
-                  if (event.target === overlay) {
-                    overlay.style.display = 'none';
-                  }
-                });
-              </script>
+              <img src="SciModAssy.png" alt="Preliminary system CAD assembly" class="enlargeable" style="max-width: 100%; height: auto; margin-top: 15px; cursor: pointer;">
+              <p style="text-align: center; color: grey; font-style: italic; margin-top: 10px;">Click to enlarge</p>
 
               
 
@@ -296,5 +235,43 @@
         });
       });
     </script>
+
+    <!-- Universal Overlay for Enlarged Images -->
+    <div id="image-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+      <img id="overlay-image" src="" alt="Enlarged Image" style="max-width: 90%; max-height: 90%; margin: auto;">
+      <button id="close-overlay" style="position: absolute; top: 20px; right: 20px; background: none; color: white; border: none; font-size: 30px; cursor: pointer;">&times;</button>
+    </div>
+
+    <script>
+      // JavaScript to handle universal click-to-enlarge functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const overlay = document.getElementById('image-overlay');
+        const overlayImage = document.getElementById('overlay-image');
+        const closeOverlay = document.getElementById('close-overlay');
+    
+        // Attach click event to all images with the "enlargeable" class
+        document.querySelectorAll('.enlargeable').forEach(img => {
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src; // Set the overlay image source
+            overlay.style.display = 'flex'; // Show the overlay
+          });
+        });
+    
+        // Close the overlay when the close button is clicked
+        closeOverlay.addEventListener('click', () => {
+          overlay.style.display = 'none'; // Hide the overlay
+        });
+    
+        // Close the overlay when clicking outside the image
+        overlay.addEventListener('click', (event) => {
+          if (event.target === overlay) {
+            overlay.style.display = 'none';
+          }
+        });
+      });
+    </script>
+
+
+    
   </body>
 </html>
