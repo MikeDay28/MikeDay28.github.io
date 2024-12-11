@@ -189,7 +189,46 @@
                   index to perform the next actions.
                 </span>
                 <br>7. After analysis at the first site is complete, the system undergoes a flushing operation to rinse the fittings and tubing to avoid cross-contamination. The flush leads into the waste solution container.
+                <br><br>Below is a series of CAD models to gain more context on how this system looks, as well as phases of testing I performed.
               </p>
+
+              <img src="SciModAssy.png" alt="Preliminary system CAD assembly" id="AssyCAD" style="max-width: 100%; height: auto; margin-top: 15px; cursor: pointer;">
+
+              <!-- Overlay for Enlarged Image -->
+              <div id="image-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+                <img id="overlay-image" src="" alt="Enlarged Preliminary system CAD assembly" style="max-width: 90%; max-height: 90%; margin: auto;">
+                <button id="close-overlay" style="position: absolute; top: 20px; right: 20px; background: none; color: white; border: none; font-size: 30px; cursor: pointer;">&times;</button>
+              </div>
+              
+              <!-- JavaScript for Image Overlay -->
+              <script>
+                const AssyCAD = document.getElementById('AssyCAD');
+                const overlay = document.getElementById('image-overlay');
+                const overlayImage = document.getElementById('overlay-image');
+                const closeOverlay = document.getElementById('close-overlay');
+              
+                // Open overlay when the image is clicked
+                pidImage.addEventListener('click', () => {
+                  overlayImage.src = AssyCAD.src; // Use the same image source
+                  overlay.style.display = 'flex'; // Show the overlay
+                });
+              
+                // Close overlay when the close button is clicked
+                closeOverlay.addEventListener('click', () => {
+                  overlay.style.display = 'none'; // Hide the overlay
+                });
+              
+                // Close overlay when clicking outside the image
+                overlay.addEventListener('click', (event) => {
+                  if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                  }
+                });
+              </script>
+
+              
+
+              
 
               
               
